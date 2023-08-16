@@ -83,7 +83,7 @@ public class CircularDoublyLinkedList<E> implements List<E> {
     }
 
     public E removeFirst(E e){
-
+        return null;
     }
 
     @Override
