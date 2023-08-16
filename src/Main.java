@@ -13,6 +13,9 @@ public class Main {
         System.out.println("Size:"+cdll.size());
         System.out.println("Contains 99:"+cdll.contains(99));
         System.out.println("isEmpty?"+cdll.isEmpty());
+        //System.out.println(cdll.getFirst());
+        System.out.println("Remove Firsts: "+cdll.removeFirst());
+        System.out.println(cdll);
         /*
             20-->4-->3-->10-->99-->23-->20
             Size:6

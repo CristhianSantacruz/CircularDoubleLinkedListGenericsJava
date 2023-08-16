@@ -49,7 +49,6 @@ public class CircularDoublyLinkedList<E> implements List<E> {
         else{
 
             Node<E> ultimo = this.head.getAfter();
-
             nuevo.setNext(this.head);
             nuevo.setAfter(ultimo);
             this.head.setAfter(nuevo);
@@ -59,6 +58,28 @@ public class CircularDoublyLinkedList<E> implements List<E> {
         }
 
         return true;
+    }
+    public E removeFirst(){
+        if(this.isEmpty()) return null;
+        else{
+            E e  = this.head.getContent();
+            if(this.head.getNext() == this.head){
+                this.head = null;
+                this.current = null;
+            }else{
+                Node<E> nodeNext = this.head.getNext();
+                Node<E> nodeAfter = this.head.getAfter();
+
+                nodeNext.setAfter(nodeAfter);
+                nodeAfter.setNext(nodeNext);
+                this.head  = nodeNext;
+                this.current = this.head;
+
+            }
+            return e;
+
+        }
+
     }
     @Override
     public boolean add(E e) {
@@ -82,9 +103,6 @@ public class CircularDoublyLinkedList<E> implements List<E> {
         return true;
     }
 
-    public E removeFirst(E e){
-        return null;
-    }
 
     @Override
     public String toString(){
